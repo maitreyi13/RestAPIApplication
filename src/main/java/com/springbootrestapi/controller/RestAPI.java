@@ -13,4 +13,10 @@ public class RestAPI {
     {
         return "Hello! " + name + " From BridgeLabz!!";
     }
+    //Use GET Request Method and pass name as path variable
+    @RequestMapping(value = {"/query/{name}"}, method = RequestMethod.GET)
+    public String greet(@PathVariable String name) {
+        return "<h1><font color=orange>Hello! " + name + " From BridgeLabz!!</font></h1>" +
+                "</br> <font color=green>Passing name as a path variable.</font>";
+    }
 }
