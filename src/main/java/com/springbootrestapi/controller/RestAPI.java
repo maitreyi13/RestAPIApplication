@@ -7,8 +7,10 @@ public class RestAPI {
     public String welcome(){
         return "<h1>Hello From BridgeLabz!!</h1>";
     }
-    @RequestMapping(value = {"/greet/{name}"}, method = RequestMethod.GET)
-    public String greet(@PathVariable String name) {
-        return "Hello, " + name + " from BridgeLabz!!";
+    //Use GET Request Method and pass name as query parameter
+    @GetMapping("/query")
+    public String getUsers(@RequestParam(value = "name", defaultValue = "Mark") String name)
+    {
+        return "Hello! " + name + " From BridgeLabz!!";
     }
 }
