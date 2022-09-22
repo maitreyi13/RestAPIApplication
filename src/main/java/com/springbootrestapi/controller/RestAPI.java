@@ -25,4 +25,10 @@ public class RestAPI {
     public String post(@RequestBody Entity entity) {
         return "</h1>Hello " + entity.getFirstName() + " "+  entity.getLastName() + "!</h1>";
     }
+    /*Use PUT Request Method and pass first name as
+    Path Variable and last name as Query Parameter*/
+    @PutMapping("/put/{firstName}")
+    public String put(@PathVariable String firstName,@RequestParam(value = "lastName") String lastName) {
+        return "Hello " + firstName + " " + lastName + "!";
+    }
 }
